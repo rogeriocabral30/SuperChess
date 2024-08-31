@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 74ba042793c343f4690a8e72987f11a5
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - posicaoVisaoSuperior: {fileID: 9110201059245556243, guid: 4c14f8b50d9841244bffaa03a3e0c529, type: 3}
+  - posicaoOriginal: {fileID: 3389535556906268097, guid: 275585b3e4eb2bf4b99a1c56337a9fb3, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

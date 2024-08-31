@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 3eef505aa2cf28e4fa69ff24b7120927
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - casaPrefab: {fileID: 4479006076084087666, guid: 9b1e7248e9955244c9e1c112af605ffa, type: 3}
+  - materialCasaPreta: {fileID: 2100000, guid: 3acd8d2813f4b404ba32c0af9c8006ea, type: 2}
+  - materialCasaBranca: {fileID: 2100000, guid: 70fbbe5b21977124a838e820232b04d7, type: 2}
+  - buracoPrefab: {fileID: 6486695321371949777, guid: db762aabcb7674c4da7af6a3ba2d3414, type: 3}
+  - elevacaoPrefab: {fileID: 5109815423115662230, guid: d73153a354c716b4cb71449a28fd7771, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
