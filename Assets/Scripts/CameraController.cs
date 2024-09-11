@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
@@ -9,9 +10,10 @@ public class CameraController : MonoBehaviour
     public float zoomMax = 100f; // Distância máxima para o zoom
 
     // Posições da câmera
-    public Transform posicaoVisaoSuperior;
-    public Transform posicaoOriginal;
+    public Transform posicaoVisaoSuperior, posicaoVisaoSuperior2, posicaoVisaoSuperior3, posicaoVisaoSuperior4;
+    public Transform posicaoOriginal, posicaoOriginal2, posicaoOriginal3, posicaoOriginal4;
     private bool emVisaoSuperior = false;
+    private int visaoSuperior, visaoTatica = 0;
 
     private void Start()
     {
@@ -27,10 +29,12 @@ public class CameraController : MonoBehaviour
             {
                 if (emVisaoSuperior)
                 {
+                    visaoSuperior = 0;
                     TransformCamera(posicaoOriginal);
                 }
                 else
                 {
+                    visaoTatica = 0;
                     TransformCamera(posicaoVisaoSuperior);
                 }
                 emVisaoSuperior = !emVisaoSuperior;
@@ -41,6 +45,51 @@ public class CameraController : MonoBehaviour
             }
         }
 
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            if (emVisaoSuperior && visaoSuperior == 0)
+            {
+                visaoSuperior = 1;
+                TransformCamera(posicaoVisaoSuperior2);
+            }
+            else if (emVisaoSuperior && visaoSuperior == 1)
+            {
+                visaoSuperior = 2;
+                TransformCamera(posicaoVisaoSuperior3);
+            }
+            else if (emVisaoSuperior && visaoSuperior == 2)
+            {
+                visaoSuperior = 3;
+                TransformCamera(posicaoVisaoSuperior4);
+            }
+            else if (emVisaoSuperior && visaoSuperior == 3)
+            {
+                visaoSuperior = 0;
+                TransformCamera(posicaoVisaoSuperior);
+            }
+
+            if (!emVisaoSuperior && visaoTatica == 0)
+            {
+                visaoTatica = 1;
+                TransformCamera(posicaoOriginal2);
+            }
+            else if (!emVisaoSuperior && visaoTatica == 1)
+            {
+                visaoTatica = 2;
+                TransformCamera(posicaoOriginal3);
+            }
+            else if (!emVisaoSuperior && visaoTatica == 2)
+            {
+                visaoTatica = 3;
+                TransformCamera(posicaoOriginal4);
+            }
+            else if (!emVisaoSuperior && visaoTatica == 3)
+            {
+                visaoTatica = 0;
+                TransformCamera(posicaoOriginal);
+            }
+        }
+        /*
         if (!emVisaoSuperior) // Movimento da câmera apenas na posição original
         {
             // Verifica se o botão direito do mouse está pressionado
@@ -71,7 +120,7 @@ public class CameraController : MonoBehaviour
             {
                 transform.position = novaPosicao;
             }
-        }
+        }*/
     }
 
     private void TransformCamera(Transform novaPosicao)

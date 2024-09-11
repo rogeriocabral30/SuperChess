@@ -160,6 +160,7 @@ MonoBehaviour:
   casa: {fileID: 4479006076084087666, guid: 9b1e7248e9955244c9e1c112af605ffa, type: 3}
   pecaBranca: {fileID: 2911907423808343212, guid: 05af2229ca5f92e439d8b8400047987c, type: 3}
   pecaPreta: {fileID: 5214308400865052766, guid: 19b9103ccd23ec74f9630e474d176b7b, type: 3}
+  mago: {fileID: 936958624404142047, guid: 5980d14deaa0ac947b58c549e5f462f4, type: 3}
 --- !u!4 &508754812
 Transform:
   m_ObjectHideFlags: 0
@@ -380,7 +381,13 @@ MonoBehaviour:
   zoomMin: 10
   zoomMax: 100
   posicaoVisaoSuperior: {fileID: 9110201059245556243, guid: 4c14f8b50d9841244bffaa03a3e0c529, type: 3}
+  posicaoVisaoSuperior2: {fileID: 9110201059245556243, guid: 897b61675acbdb649a3577eb063276d0, type: 3}
+  posicaoVisaoSuperior3: {fileID: 9110201059245556243, guid: c1e6a091fe77da8479a9229d8b9073a6, type: 3}
+  posicaoVisaoSuperior4: {fileID: 9110201059245556243, guid: b1177d62e68317744bc220f8e39dd390, type: 3}
   posicaoOriginal: {fileID: 3389535556906268097, guid: 275585b3e4eb2bf4b99a1c56337a9fb3, type: 3}
+  posicaoOriginal2: {fileID: 3389535556906268097, guid: 2888123f79aec3b4599f2a77be7bfca2, type: 3}
+  posicaoOriginal3: {fileID: 3389535556906268097, guid: a6e1ed1092599b441bf757e5ff35ae37, type: 3}
+  posicaoOriginal4: {fileID: 3389535556906268097, guid: 9bd03b30ae73fe04987b7c3d61f13ad7, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

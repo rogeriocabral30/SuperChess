@@ -11,7 +11,7 @@ public class TabuleiroDamas : MonoBehaviour
     [SerializeField] private Color corBuraco = Color.black; // Cor dos buracos
     [SerializeField] private Color corElevacao = Color.green; // Cor das casas com elevação
     [SerializeField] private float alturaElevacao = 0.5f; // Altura da elevação
-    [SerializeField] private GameObject casa, pecaBranca, pecaPreta;
+    [SerializeField] private GameObject casa, pecaBranca, pecaPreta, mago;
     private GameObject[] _casa;
 
     private const int tamanhoTabuleiro = 10; // Tabuleiro 8x8 para damas
@@ -22,6 +22,7 @@ public class TabuleiroDamas : MonoBehaviour
 
     private void Start()
     {
+        Instantiate(mago);
         CriarTabuleiroDamas();
         AdicionarBuracos();
         AdicionarElevacoes();
