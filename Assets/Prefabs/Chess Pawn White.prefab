@@ -97,7 +97,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be6744aa2a9b92041bc96d9c6fedd2e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boardManager: {fileID: 0}
   hoverColor: {r: 0.25233814, g: 0.8396226, b: 0.1544589, a: 0}
+  moveSpeed: 2
 --- !u!64 &9160728629633531917
 MeshCollider:
   m_ObjectHideFlags: 0
