@@ -1,5 +1,5 @@
 using UnityEngine;
-using System.Collections; // Certifique-se de incluir este namespace
+using System.Collections;
 
 public class PawnManager : MonoBehaviour
 {
@@ -67,7 +67,7 @@ public class PawnManager : MonoBehaviour
         StartCoroutine(WaitForClick());
     }
 
-    //  aguarda um clique em uma posição do tabuleiro
+    // Aguarda um clique em uma posição do tabuleiro
     private IEnumerator WaitForClick()
     {
         while (true)
@@ -82,13 +82,30 @@ public class PawnManager : MonoBehaviour
                     // Verifica se o clique foi sobre uma casa do tabuleiro
                     if (hit.collider.CompareTag("Casa"))
                     {
-                        targetPosition = hit.point;
-                        isMoving = true;
-                        yield break; // move quando a posição alvo é definida
+                        Vector3 targetPos = hit.point;
+
+                        // Ajusta a posição alvo para o centro da casa
+                        targetPos = new Vector3(Mathf.Round(targetPos.x), transform.position.y, Mathf.Round(targetPos.z));
+
+                        // Verifica se a posição alvo é uma casa adjacente
+                        if (IsAdjacent(targetPos))
+                        {
+                            targetPosition = targetPos;
+                            isMoving = true;
+                            yield break; // Move quando a posição alvo é definida
+                        }
                     }
                 }
             }
             yield return null; // Espera para verificar novamente
         }
+    }
+
+    // Verifica se a posição alvo é adjacente à posição atual
+    private bool IsAdjacent(Vector3 targetPos)
+    {
+        Vector3 currentPos = transform.position;
+        float distance = Vector3.Distance(new Vector3(currentPos.x, 0, currentPos.z), new Vector3(targetPos.x, 0, targetPos.z));
+        return distance == 1.0f; // Verifica se a distância é exatamente 1 unidade (uma casa)
     }
 }
