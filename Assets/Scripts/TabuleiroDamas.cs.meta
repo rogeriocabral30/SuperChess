@@ -4,11 +4,12 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - casaPrefab: {fileID: 4479006076084087666, guid: 9b1e7248e9955244c9e1c112af605ffa, type: 3}
   - materialCasaPreta: {fileID: 2100000, guid: 3acd8d2813f4b404ba32c0af9c8006ea, type: 2}
   - materialCasaBranca: {fileID: 2100000, guid: 70fbbe5b21977124a838e820232b04d7, type: 2}
-  - buracoPrefab: {fileID: 6486695321371949777, guid: db762aabcb7674c4da7af6a3ba2d3414, type: 3}
-  - elevacaoPrefab: {fileID: 5109815423115662230, guid: d73153a354c716b4cb71449a28fd7771, type: 3}
+  - casa: {fileID: 4479006076084087666, guid: 9b1e7248e9955244c9e1c112af605ffa, type: 3}
+  - pecaBranca: {fileID: 2911907423808343212, guid: 05af2229ca5f92e439d8b8400047987c, type: 3}
+  - pecaPreta: {fileID: 5214308400865052766, guid: 19b9103ccd23ec74f9630e474d176b7b, type: 3}
+  - mago: {fileID: 936958624404142047, guid: 5980d14deaa0ac947b58c549e5f462f4, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

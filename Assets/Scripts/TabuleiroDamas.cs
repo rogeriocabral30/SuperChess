@@ -15,8 +15,8 @@ public class TabuleiroDamas : MonoBehaviour
     private GameObject[] _casa;
 
     private const int tamanhoTabuleiro = 10; // Tabuleiro 8x8 para damas
-    private const int numeroBuracos = 2; // Número de buracos a serem criados (agora 2)
-    private const int numeroElevacoes = 4; // Número de casas com elevação a serem criadas
+    private const int numeroBuracos = 4; // Número de buracos a serem criados (agora 2)
+    private const int numeroElevacoes = 6; // Número de casas com elevação a serem criadas
 
     private List<Vector2Int> posicoesBuracos = new List<Vector2Int>();
 
