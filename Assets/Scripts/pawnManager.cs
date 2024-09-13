@@ -3,6 +3,8 @@ using System.Collections;
 
 public class PawnManager : MonoBehaviour
 {
+    private static PawnManager selectedPawn = null; // Peça atualmente selecionada
+
     private bool mouseOver = false;
     public Color hoverColor;
     private Renderer rend;
@@ -26,16 +28,28 @@ public class PawnManager : MonoBehaviour
 
     private void OnMouseExit()
     {
-        rend.material.color = startColor;
+        if (selectedPawn != this) // Não altera a cor se a peça estiver selecionada
+        {
+            rend.material.color = startColor;
+        }
         mouseOver = false;
     }
 
     private void OnMouseDown()
     {
-        // Se a peça está sob o cursor e é clicada, marca como selecionada
+        // Se a peça está sob o cursor e é clicada, verifica o status de seleção
         if (mouseOver)
         {
-            SelectPawn();
+            if (selectedPawn == this)
+            {
+                
+                DeselectPawn();
+            }
+            else
+            {
+                
+                SelectPawn();
+            }
         }
     }
 
@@ -60,17 +74,28 @@ public class PawnManager : MonoBehaviour
     private void SelectPawn()
     {
         // Se já houver outra peça se movendo, não faz nada
-        if (isMoving)
+        if (isMoving || selectedPawn != null)
             return;
 
-        // Inicia o processo de seleção e movimentação
+        // Marca a peça como selecionada
+        selectedPawn = this;
+        rend.material.color = hoverColor; // Mantém a cor de seleção
+
+        // Inicia o processo de movimentação
         StartCoroutine(WaitForClick());
+    }
+
+    
+    private void DeselectPawn()
+    {
+        selectedPawn = null;
+        rend.material.color = startColor; // Restaura a cor original
     }
 
     // Aguarda um clique em uma posição do tabuleiro
     private IEnumerator WaitForClick()
     {
-        while (true)
+        while (selectedPawn == this)
         {
             if (Input.GetMouseButtonDown(0))
             {
@@ -92,6 +117,7 @@ public class PawnManager : MonoBehaviour
                         {
                             targetPosition = targetPos;
                             isMoving = true;
+                            DeselectPawn(); // Deseleciona a peça após o movimento
                             yield break; // Move quando a posição alvo é definida
                         }
                     }
