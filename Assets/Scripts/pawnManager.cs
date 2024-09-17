@@ -11,7 +11,7 @@ public class PawnManager : MonoBehaviour
     private Color startColor;
 
     public float moveSpeed = 2f; // Velocidade de movimentação
-    private Vector3 targetPosition; // Posição alvo para movimentação
+    private Vector3 targetPosition; // Posição  da peça para movimentação
     private bool isMoving = false; // Flag para verificar se a peça está se movendo
 
     private void Start()
@@ -42,12 +42,10 @@ public class PawnManager : MonoBehaviour
         {
             if (selectedPawn == this)
             {
-                
                 DeselectPawn();
             }
             else
             {
-                
                 SelectPawn();
             }
         }
@@ -55,7 +53,7 @@ public class PawnManager : MonoBehaviour
 
     private void Update()
     {
-        // Mova a peça em direção ao alvo
+        // Mova a peça em direção a casa
         if (isMoving)
         {
             if (Vector3.Distance(transform.position, targetPosition) > 0.1f)
@@ -65,12 +63,12 @@ public class PawnManager : MonoBehaviour
             else
             {
                 transform.position = targetPosition;
-                isMoving = false; // Interrompe o movimento quando chega ao alvo
+                isMoving = false; // Interrompe o movimento quando chega a casa
             }
         }
     }
 
-    // Seleciona a peça e define a posição alvo
+    // Seleciona a peça e define a posição da casa
     private void SelectPawn()
     {
         // Se já houver outra peça se movendo, não faz nada
@@ -81,11 +79,10 @@ public class PawnManager : MonoBehaviour
         selectedPawn = this;
         rend.material.color = hoverColor; // Mantém a cor de seleção
 
-        // Inicia o processo de movimentação
+        // Inicia a movimentação
         StartCoroutine(WaitForClick());
     }
 
-    
     private void DeselectPawn()
     {
         selectedPawn = null;
@@ -104,21 +101,21 @@ public class PawnManager : MonoBehaviour
 
                 if (Physics.Raycast(ray, out hit))
                 {
-                    // Verifica se o clique foi sobre uma casa do tabuleiro
+                    // Verifica se o clique foi sobre uma casaa
                     if (hit.collider.CompareTag("Casa"))
                     {
                         Vector3 targetPos = hit.point;
 
-                        // Ajusta a posição alvo para o centro da casa
+                        // Ajusta a posição da peça para o centro da casa
                         targetPos = new Vector3(Mathf.Round(targetPos.x), transform.position.y, Mathf.Round(targetPos.z));
 
-                        // Verifica se a posição alvo é uma casa adjacente
-                        if (IsAdjacent(targetPos))
+                        // Verifica se a posição  é uma casa adjacente e se está vazia
+                        if (IsAdjacent(targetPos) && IsPositionEmpty(targetPos))
                         {
                             targetPosition = targetPos;
                             isMoving = true;
                             DeselectPawn(); // Deseleciona a peça após o movimento
-                            yield break; // Move quando a posição alvo é definida
+                            yield break; // Move quando a posição da casa é definida
                         }
                     }
                 }
@@ -127,11 +124,25 @@ public class PawnManager : MonoBehaviour
         }
     }
 
-    // Verifica se a posição alvo é adjacente à posição atual
+    // Verifica se a posição da casaé adjacente à posição atual
     private bool IsAdjacent(Vector3 targetPos)
     {
         Vector3 currentPos = transform.position;
         float distance = Vector3.Distance(new Vector3(currentPos.x, 0, currentPos.z), new Vector3(targetPos.x, 0, targetPos.z));
         return distance == 1.0f; // Verifica se a distância é exatamente 1 unidade (uma casa)
+    }
+
+    // Verifica se a posição da casa está vazia
+    private bool IsPositionEmpty(Vector3 targetPos)
+    {
+        Collider[] hitColliders = Physics.OverlapBox(targetPos, new Vector3(0.5f, 0.1f, 0.5f));
+        foreach (var hitCollider in hitColliders)
+        {
+            if (hitCollider.CompareTag("ChessPawn")) // Verifica se há uma peça na posição
+            {
+                return false; // A posição está ocupada
+            }
+        }
+        return true; // A posição está vazia
     }
 }
