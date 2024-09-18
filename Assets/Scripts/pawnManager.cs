@@ -5,34 +5,23 @@ using System.Collections.Generic;
 public class PawnManager : MonoBehaviour
 {
     private static PawnManager selectedPawn = null; // Peça atualmente selecionada
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
     private bool mouseOver = false;
     public Color hoverColor;
     private Renderer rend;
     private Color startColor;
 
     public float moveSpeed = 2f; // Velocidade de movimentação
-<<<<<<< Updated upstream
     private Vector3 targetPosition; // Posição alvo para movimentação
     private bool isMoving = false; // Flag para verificar se a peça está se movendo
-
-    private void Start()
-    {
-=======
-    private Vector3 targetPosition; // Posição da peça para movimentação
-    private bool isMoving = false; // verificar se a peça está se movendo
     public TabuleiroDamas tabuleiro;
-
     private List<GameObject> casasDisponiveis = new List<GameObject>(); // Casas disponíveis para movimento
     private Dictionary<GameObject, Color> casaCoresOriginais = new Dictionary<GameObject, Color>(); // Cores originais das casas
 
     private void Start()
     {
         tabuleiro = FindObjectOfType<TabuleiroDamas>();
->>>>>>> Stashed changes
+
         rend = GetComponent<Renderer>();
         startColor = rend.material.color;
 
@@ -77,11 +66,6 @@ public class PawnManager : MonoBehaviour
 
     private void Update()
     {
-<<<<<<< Updated upstream
-        // Mova a peça em direção ao alvo
-=======
-        // Mova a peça em direção a casa
->>>>>>> Stashed changes
         if (isMoving)
         {
             if (Vector3.Distance(transform.position, targetPosition) > 0.1f)
@@ -96,10 +80,6 @@ public class PawnManager : MonoBehaviour
         }
     }
 
-<<<<<<< Updated upstream
-    // Seleciona a peça e define a posição alvo
-=======
->>>>>>> Stashed changes
     private void SelectPawn()
     {
         if (isMoving || selectedPawn != null)
@@ -109,10 +89,6 @@ public class PawnManager : MonoBehaviour
         rend.material.color = hoverColor; // Mantém a cor de seleção
         MostrarCasasDisponiveis(); // Mostra a casas disponíveis para movimento
 
-<<<<<<< Updated upstream
-        // Inicia o processo de movimentação
-=======
->>>>>>> Stashed changes
         StartCoroutine(WaitForClick());
     }
 
@@ -135,11 +111,6 @@ public class PawnManager : MonoBehaviour
 
                 if (Physics.Raycast(ray, out hit))
                 {
-<<<<<<< Updated upstream
-                    // Verifica se o clique foi sobre uma casa do tabuleiro
-=======
-                    // Verifica se o clique foi sobre uma casa
->>>>>>> Stashed changes
                     if (hit.collider.CompareTag("Casa"))
                     {
                         Vector3 targetPos = hit.point;
@@ -147,13 +118,10 @@ public class PawnManager : MonoBehaviour
                         // Ajusta a posição alvo para o centro da casa
                         targetPos = new Vector3(Mathf.Round(targetPos.x), transform.position.y, Mathf.Round(targetPos.z));
 
-<<<<<<< Updated upstream
                         // Verifica se a posição alvo é uma casa adjacente
                         if (IsAdjacent(targetPos))
-=======
                         // Verifica se a posição é uma casa adjacente e se está vazia
                         if (IsAdjacent(targetPos) && IsPositionEmpty(targetPos))
->>>>>>> Stashed changes
                         {
                             targetPosition = targetPos;
                             isMoving = true;
@@ -167,18 +135,12 @@ public class PawnManager : MonoBehaviour
         }
     }
 
-<<<<<<< Updated upstream
-    // Verifica se a posição alvo é adjacente à posição atual
-=======
->>>>>>> Stashed changes
     private bool IsAdjacent(Vector3 targetPos)
     {
         Vector3 currentPos = transform.position;
         float distance = Vector3.Distance(new Vector3(currentPos.x, 0, currentPos.z), new Vector3(targetPos.x, 0, targetPos.z));
         return distance == 1.0f; // Verifica se a distância é exatamente uma casa
     }
-<<<<<<< Updated upstream
-=======
 
     private bool IsPositionEmpty(Vector3 targetPos)
     {
@@ -235,5 +197,4 @@ public class PawnManager : MonoBehaviour
             }
         }
     }
->>>>>>> Stashed changes
 }

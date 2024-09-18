@@ -14,37 +14,27 @@ public class TabuleiroDamas : MonoBehaviour
     [SerializeField] private GameObject casa, pecaBranca, pecaPreta, mago;
     private GameObject[] _casa;
 
-<<<<<<< Updated upstream
+
     private const int tamanhoTabuleiro = 10; // Tabuleiro 8x8 para damas
     private const int numeroBuracos = 4; // Número de buracos a serem criados (agora 2)
-=======
     public bool[,] _casaOcupada;
 
-    private const int tamanhoTabuleiro = 10; // Tabuleiro 10x10 para damas
-    private const int numeroBuracos = 4; // Número de buracos a serem criados
->>>>>>> Stashed changes
     private const int numeroElevacoes = 6; // Número de casas com elevação a serem criadas
 
     private List<Vector2Int> posicoesBuracos = new List<Vector2Int>();
 
     private void Start()
     {
-<<<<<<< Updated upstream
         Instantiate(mago);
-=======
         _casaOcupada = new bool[tamanhoTabuleiro, tamanhoTabuleiro];
->>>>>>> Stashed changes
         CriarTabuleiroDamas();
         AdicionarBuracos();
         AdicionarElevacoes();
         GerarPecas();
     }
 
-<<<<<<< Updated upstream
-=======
     private void Update() { }
 
->>>>>>> Stashed changes
     private void GerarPecas()
     {
         for (int x = 0; x < tamanhoTabuleiro; x++)
@@ -64,8 +54,6 @@ public class TabuleiroDamas : MonoBehaviour
                 
             }
         }
-<<<<<<< Updated upstream
-=======
         Debug.Log("Tabuleiro gerado");
     }
 
@@ -77,7 +65,7 @@ public class TabuleiroDamas : MonoBehaviour
     public void desocupaCasa(int x, int y)
     {
         _casaOcupada[x, y] = false;
->>>>>>> Stashed changes
+
     }
 
     private void CriarTabuleiroDamas()
@@ -89,23 +77,14 @@ public class TabuleiroDamas : MonoBehaviour
             for (int z = 0; z < tamanhoTabuleiro; z++)
             {
                 Vector3 posicao = new Vector3(x, 0, z);
-<<<<<<< Updated upstream
-                casa = GameObject.CreatePrimitive(PrimitiveType.Cube);
-=======
+                //casa = GameObject.CreatePrimitive(PrimitiveType.Cube);
                 casa = GameObject.Instantiate(casa);
->>>>>>> Stashed changes
                 casa.transform.position = posicao;
                 casa.transform.localScale = new Vector3(tamanhoCasa, 0.2f, tamanhoCasa); // Define a escala das casas
-<<<<<<< Updated upstream
                 casa.tag = "Casa";
 
                 Renderer renderer = casa.GetComponent<Renderer>();
                 renderer.material = (x + z) % 2 == 0 ? materialCasaBranca : materialCasaPreta;
-=======
-
-                Renderer renderer = casa.GetComponent<Renderer>();
-                renderer.material = (x + z) % 2 == 1 ? materialCasaBranca : materialCasaPreta;
->>>>>>> Stashed changes
                 casa.name = $"Casa {x},{z}";
             }
         }
@@ -147,12 +126,13 @@ public class TabuleiroDamas : MonoBehaviour
             Vector3 posicaoMundo = new Vector3(0, 0, 0);
 
             // Cria o buraco
-            GameObject buraco = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            //GameObject buraco = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            /*GameObject buraco = new GameObject();
             buraco.transform.position = posicaoMundo;
             buraco.transform.localScale = new Vector3(tamanhoCasa, 0.1f, tamanhoCasa); // Define a escala dos buracos
             buraco.GetComponent<Renderer>().material.color = corBuraco;
             buraco.name = $"Buraco {posicao.x},{posicao.y}";
-
+            */
             posicoesBuracos.Add(posicao);
             buracosCriados++;
         }
@@ -206,10 +186,7 @@ public class TabuleiroDamas : MonoBehaviour
             elevacao.transform.localScale = new Vector3(tamanhoCasa, alturaElevacao, tamanhoCasa); // Define a escala da elevação
             elevacao.GetComponent<Renderer>().material.color = corElevacao;
             elevacao.name = $"Elevacao {posicao.x},{posicao.y}";
-<<<<<<< Updated upstream
-=======
             _casaOcupada[posicao.x, posicao.y] = true;
->>>>>>> Stashed changes
         }
     }
 
