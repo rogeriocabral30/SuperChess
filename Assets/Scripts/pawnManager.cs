@@ -4,6 +4,7 @@ using System.Collections;
 public class PawnManager : MonoBehaviour
 {
     private static PawnManager selectedPawn = null; // Peça atualmente selecionada
+    private static PawnManager pecadiminuindo = null; // peça vai diminuir de tamanho
 
     private bool mouseOver = false;
     public Color hoverColor;
@@ -12,10 +13,15 @@ public class PawnManager : MonoBehaviour
 
     public float moveSpeed = 2f; // Velocidade de movimentação
     private Vector3 targetPosition; // Posição  da peça para movimentação
-    private bool isMoving = false; // Flag para verificar se a peça está se movendo
+    private bool isMoving = false, isShrinking = false; // Flag para verificar se a peça está se movendo
+    public TabuleiroDamas tabuleiro;
+
+    private Vector3 scaleChange;
 
     private void Start()
     {
+        scaleChange = new Vector3(-0.01f, -0.01f, -0.01f);
+        tabuleiro = FindObjectOfType(typeof(TabuleiroDamas)) as TabuleiroDamas;
         rend = GetComponent<Renderer>();
         startColor = rend.material.color;
     }
@@ -53,12 +59,28 @@ public class PawnManager : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetMouseButtonDown(2))
+        {
+            isShrinking = true;
+        }
+
+        if (isShrinking)
+        {
+            while(transform.localScale.x >= 0.2f)
+            {
+                transform.localScale = -scaleChange;
+            }
+        }
+
         // Mova a peça em direção a casa
         if (isMoving)
         {
             if (Vector3.Distance(transform.position, targetPosition) > 0.1f)
             {
+                tabuleiro.desocupaCasa((int)transform.position.x, (int)transform.position.y);
+                tabuleiro.ocupaCasa((int)targetPosition.x, (int)targetPosition.y);
                 transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+
             }
             else
             {
@@ -78,6 +100,8 @@ public class PawnManager : MonoBehaviour
         // Marca a peça como selecionada
         selectedPawn = this;
         rend.material.color = hoverColor; // Mantém a cor de seleção
+
+        //pecadiminuindo = this;
 
         // Inicia a movimentação
         StartCoroutine(WaitForClick());
