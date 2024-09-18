@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7599248170922581238}
   - component: {fileID: -9174323483031270012}
   m_Layer: 0
-  m_Name: MagoNegro
+  m_Name: CartaPrfab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
