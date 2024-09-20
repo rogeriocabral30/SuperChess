@@ -6,17 +6,19 @@ public class PawnManager : MonoBehaviour
 {
     private static PawnManager selectedPawn = null; // Peça atualmente selecionada
 
-    private bool mouseOver = false;
-    public Color hoverColor;
-    private Renderer rend;
-    private Color startColor;
+    private bool mouseOver = false; //aciona ao passar o mouse em cima do peão
+    public Color hoverColor; //definindo cor ao passar mouse em cima do peão
+    private Renderer rend; //variável para renderer
+    private Color startColor; //definindo cor inicial da peça
 
     public float moveSpeed = 2f; // Velocidade de movimentação
     private Vector3 targetPosition; // Posição alvo para movimentação
     private bool isMoving = false; // Flag para verificar se a peça está se movendo
-    public TabuleiroDamas tabuleiro;
+    public TabuleiroDamas tabuleiro; //variável para usar ao chamar objetos da classe tabuleiro
     private List<GameObject> casasDisponiveis = new List<GameObject>(); // Casas disponíveis para movimento
     private Dictionary<GameObject, Color> casaCoresOriginais = new Dictionary<GameObject, Color>(); // Cores originais das casas
+
+    public Vector2Int posAtual, novaPos;
 
     private void Start()
     {
@@ -62,6 +64,11 @@ public class PawnManager : MonoBehaviour
                 SelectPawn();
             }
         }
+    }
+
+    public void promote()
+    {
+        //promover peão para outra classe
     }
 
     private void Update()
@@ -124,9 +131,21 @@ public class PawnManager : MonoBehaviour
                         if (IsAdjacent(targetPos) && IsPositionEmpty(targetPos))
                         {
                             targetPosition = targetPos;
-                            isMoving = true;
-                            DeselectPawn(); // Deseleciona a peça após o movimento
-                            yield break; // Move quando a posição alvo é definida
+
+                            //verificar se a casa é na frente do peão
+                            foreach (GameObject c in casasDisponiveis)
+                                {
+                                    if (targetPos.x == c.transform.position.x && targetPos.y -0.3f == c.transform.position.y)
+                                    {
+                                        isMoving = true;
+                                        DeselectPawn(); // Deseleciona a peça após o movimento
+                                        yield break; // Move quando a posição alvo é definida
+                                    }                                        
+                                }
+
+                            //isMoving = true;
+                            //DeselectPawn(); // Deseleciona a peça após o movimento
+                            //yield break; // Move quando a posição alvo é definida
                         }
                     }
                 }
@@ -160,7 +179,8 @@ public class PawnManager : MonoBehaviour
         casasDisponiveis.Clear(); // Limpa a lista anterior
 
         Vector3 currentPos = transform.position;
-        Vector2Int posAtual = new Vector2Int(Mathf.RoundToInt(currentPos.x), Mathf.RoundToInt(currentPos.z));
+        // Vector2Int posAtual = new Vector2Int(Mathf.RoundToInt(currentPos.x), Mathf.RoundToInt(currentPos.z));
+        posAtual = new Vector2Int(Mathf.RoundToInt(currentPos.x), Mathf.RoundToInt(currentPos.z));
 
         for (int dx = -1; dx <= 1; dx++)
         {
@@ -168,7 +188,9 @@ public class PawnManager : MonoBehaviour
             {
                 if (Mathf.Abs(dx) == Mathf.Abs(dz)) continue; // Ignora diagonais
 
-                Vector2Int novaPos = new Vector2Int(posAtual.x + dx, posAtual.y + dz);
+                //Vector2Int novaPos = new Vector2Int(posAtual.x + dx, posAtual.y + dz);
+                //Vector2Int novaPos = new Vector2Int(posAtual.x + 1, posAtual.y);
+                novaPos = new Vector2Int(posAtual.x + 1, posAtual.y);
                 if (novaPos.x >= 0 && novaPos.x < tabuleiro._casaOcupada.GetLength(0) && novaPos.y >= 0 && novaPos.y < tabuleiro._casaOcupada.GetLength(1))
                 {
                     // Verifica se a posição está vazia

@@ -155,7 +155,7 @@ MonoBehaviour:
   materialCasaPreta: {fileID: 2100000, guid: 3acd8d2813f4b404ba32c0af9c8006ea, type: 2}
   materialCasaBranca: {fileID: 2100000, guid: 70fbbe5b21977124a838e820232b04d7, type: 2}
   corBuraco: {r: 0.9056604, g: 0.12388753, b: 0.12388753, a: 1}
-  corElevacao: {r: 0.4364358, g: 0.8679245, b: 0.1760413, a: 1}
+  corElevacao: {r: 0.46226418, g: 0.4074882, b: 0.37286404, a: 1}
   alturaElevacao: 0.5
   casa: {fileID: 4479006076084087666, guid: 9b1e7248e9955244c9e1c112af605ffa, type: 3}
   pecaBranca: {fileID: 2911907423808343212, guid: 05af2229ca5f92e439d8b8400047987c, type: 3}
