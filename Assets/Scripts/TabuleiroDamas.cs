@@ -45,11 +45,13 @@ public class TabuleiroDamas : MonoBehaviour
                 {
                     Vector3 posicaoPeca = new Vector3(x, 0.3f, y);
                     Instantiate(pecaBranca, posicaoPeca, pecaBranca.transform.rotation);
+                    pecaBranca.name = "peaoBranco";
                 }
                 if (x == 9)
                 {
                     Vector3 posicaoPeca = new Vector3(x, 0.3f, y);
                     Instantiate(pecaPreta, posicaoPeca, pecaPreta.transform.rotation);
+                    pecaPreta.name = "peaoPreto";
                 }
                 
             }

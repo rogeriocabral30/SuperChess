@@ -100,6 +100,11 @@ MonoBehaviour:
   hoverColor: {r: 0.41385686, g: 0.8773585, b: 0.30210927, a: 0}
   moveSpeed: 2
   tabuleiro: {fileID: 0}
+  arqueiroBranco: {fileID: 0}
+  whiteArcher: {fileID: 0}
+  peao: {fileID: 0}
+  posAtual: {x: 0, y: 0}
+  novaPos: {x: 0, y: 0}
 --- !u!64 &6934689214910054404
 MeshCollider:
   m_ObjectHideFlags: 0

@@ -2,9 +2,9 @@ using UnityEngine;
 using System.Collections; 
 using System.Collections.Generic; 
 
-public class PawnManager : MonoBehaviour
+public class WhitePawnManager : MonoBehaviour
 {
-    private static PawnManager selectedPawn = null; // Peça atualmente selecionada
+    private static WhitePawnManager selectedPawn = null; // Peça atualmente selecionada
 
     private bool mouseOver = false; //aciona ao passar o mouse em cima do peão
     public Color hoverColor; //definindo cor ao passar mouse em cima do peão
@@ -15,14 +15,19 @@ public class PawnManager : MonoBehaviour
     private Vector3 targetPosition; // Posição alvo para movimentação
     private bool isMoving = false; // Flag para verificar se a peça está se movendo
     public TabuleiroDamas tabuleiro; //variável para usar ao chamar objetos da classe tabuleiro
+    public whiteArcherManager arqueiroBranco; //variável para usar ao chamar objetos da classe tabuleiro
     private List<GameObject> casasDisponiveis = new List<GameObject>(); // Casas disponíveis para movimento
     private Dictionary<GameObject, Color> casaCoresOriginais = new Dictionary<GameObject, Color>(); // Cores originais das casas
+    public GameObject whiteArcher, peao;
+
 
     public Vector2Int posAtual, novaPos;
 
     private void Start()
     {
+        peao = this.gameObject;
         tabuleiro = FindObjectOfType<TabuleiroDamas>();
+        arqueiroBranco = FindObjectOfType<whiteArcherManager>();
 
         rend = GetComponent<Renderer>();
         startColor = rend.material.color;
@@ -69,6 +74,12 @@ public class PawnManager : MonoBehaviour
     public void promote()
     {
         //promover peão para outra classe
+        Vector3 promotePosition = this.transform.position;
+        promotePosition.y += 0.8f;
+        Instantiate (whiteArcher, promotePosition, whiteArcher.transform.rotation);
+        DeselectPawn ();
+        Destroy(peao);
+        
     }
 
     private void Update()
@@ -150,7 +161,11 @@ public class PawnManager : MonoBehaviour
                     }
                 }
             }
-            yield return null; // Espera para verificar novamente
+            else if (Input.GetMouseButtonDown(2))
+            {
+                promote();
+            }
+                yield return null; // Espera para verificar novamente
         }
     }
 
