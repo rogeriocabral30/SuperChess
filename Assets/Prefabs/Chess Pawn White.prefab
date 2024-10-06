@@ -102,7 +102,7 @@ MonoBehaviour:
   tabuleiro: {fileID: 0}
   arqueiroBranco: {fileID: 0}
   whiteArcher: {fileID: 2765123148830343212, guid: 16682b4c3274e0743b44da34b8916831, type: 3}
-  peao: {fileID: 0}
+  peao: {fileID: 2911907423808343212}
   posAtual: {x: 0, y: 0}
   novaPos: {x: 0, y: 0}
 --- !u!64 &9160728629633531917
