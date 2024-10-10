@@ -12,13 +12,14 @@ GameObject:
   - component: {fileID: 2740927254211350552}
   - component: {fileID: 7603619204438000442}
   - component: {fileID: 2047282041404329774}
+  - component: {fileID: -4158593749354497320}
   m_Layer: 0
   m_Name: Casa Prefab
   m_TagString: Casa
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2355660592005018584
 Transform:
   m_ObjectHideFlags: 0
@@ -105,3 +106,15 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-4158593749354497320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4479006076084087666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34ba92eb50d09374fa5f38c0ae37fb98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

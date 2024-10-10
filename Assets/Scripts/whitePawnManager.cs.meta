@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: be6744aa2a9b92041bc96d9c6fedd2e2
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - tabuleiro: {instanceID: 0}
+  - arqueiroBranco: {fileID: -3511678929620330142, guid: 16682b4c3274e0743b44da34b8916831, type: 3}
+  - whiteArcher: {fileID: 2765123148830343212, guid: 16682b4c3274e0743b44da34b8916831, type: 3}
+  - peao: {fileID: 2911907423808343212, guid: 05af2229ca5f92e439d8b8400047987c, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
