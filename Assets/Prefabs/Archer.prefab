@@ -83,7 +83,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78b905c9a3a36cc4db43f076536efd30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverColor: {r: 0, g: 0, b: 0, a: 0}
+  hoverColor: {r: 0.24615297, g: 0.9622642, b: 0.14070843, a: 0}
   tabuleiro: {fileID: 0}
   moveSpeed: 2
 --- !u!65 &-5911075329397690323
@@ -119,4 +119,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 712e2818a790eba44ba23079193957dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tabuleiro: {fileID: 0}
