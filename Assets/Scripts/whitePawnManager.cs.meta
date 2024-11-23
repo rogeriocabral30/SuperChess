@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: be6744aa2a9b92041bc96d9c6fedd2e2
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - tabuleiro: {instanceID: 0}
+  - arqueiroBranco: {fileID: -3511678929620330142, guid: 16682b4c3274e0743b44da34b8916831, type: 3}
+  - whiteArcher: {fileID: 2765123148830343212, guid: 16682b4c3274e0743b44da34b8916831, type: 3}
+  - peao: {fileID: 2911907423808343212, guid: 05af2229ca5f92e439d8b8400047987c, type: 3}
+  - whiteMage: {fileID: 7824986730634663279, guid: 856a14c730e0dbf47a2ee8ed352d1450, type: 3}
+  - turnManager: {fileID: 6624266347020599558, guid: 39a52d707db02a74dbedb5966aaa3f4e, type: 3}
+  - battleManager: {fileID: 6084751253778790735, guid: bf5c7c45d7d8a524690f3cfa052c75ca, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

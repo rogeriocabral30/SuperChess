@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 3331827673add9247b8f578b9ab8c2d9
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - peaoPreto: {fileID: 3573300855911072841, guid: 19b9103ccd23ec74f9630e474d176b7b, type: 3}
+  - tabuleiro: {fileID: 886615827862252234, guid: 40465f88f40d6fd47933fbeaa39a8510, type: 3}
+  - turnManager: {fileID: 6624266347020599558, guid: 39a52d707db02a74dbedb5966aaa3f4e, type: 3}
+  - battleManager: {fileID: 6084751253778790735, guid: bf5c7c45d7d8a524690f3cfa052c75ca, type: 3}
+  - attackCircleManager: {fileID: -4331175690649331715, guid: 1e2fb287bb77e1541841c7d4cc287a91, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

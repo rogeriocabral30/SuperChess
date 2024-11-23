@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 9160728629633531917}
   m_Layer: 0
   m_Name: Chess Pawn White
-  m_TagString: Untagged
+  m_TagString: ChessPawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60,6 +60,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -97,9 +100,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be6744aa2a9b92041bc96d9c6fedd2e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boardManager: {fileID: 0}
   hoverColor: {r: 0.25233814, g: 0.8396226, b: 0.1544589, a: 0}
   moveSpeed: 2
+  canAct: 1
+  tabuleiro: {fileID: 0}
+  arqueiroBranco: {fileID: 0}
+  whiteArcher: {fileID: 8223373098021097948, guid: a9b93b1bd25609b46879ef5b2263dd59, type: 3}
+  peao: {fileID: 2911907423808343212}
+  whiteMage: {fileID: 7824986730634663279, guid: 856a14c730e0dbf47a2ee8ed352d1450, type: 3}
+  turnManager: {fileID: 6624266347020599558, guid: 39a52d707db02a74dbedb5966aaa3f4e, type: 3}
+  battleManager: {fileID: 6084751253778790735, guid: bf5c7c45d7d8a524690f3cfa052c75ca, type: 3}
+  posAtual: {x: 0, y: 0}
+  novaPos: {x: 0, y: 0}
 --- !u!64 &9160728629633531917
 MeshCollider:
   m_ObjectHideFlags: 0

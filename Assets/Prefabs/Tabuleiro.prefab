@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1102881114048919248
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3021371196705431717}
+  - component: {fileID: 886615827862252234}
+  m_Layer: 0
+  m_Name: Tabuleiro
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3021371196705431717
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102881114048919248}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &886615827862252234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102881114048919248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eef505aa2cf28e4fa69ff24b7120927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materialCasaPreta: {fileID: 2100000, guid: 3acd8d2813f4b404ba32c0af9c8006ea, type: 2}
+  materialCasaBranca: {fileID: 2100000, guid: 70fbbe5b21977124a838e820232b04d7, type: 2}
+  corBuraco: {r: 0.9056604, g: 0.12388753, b: 0.12388753, a: 1}
+  corElevacao: {r: 0.46226418, g: 0.4074882, b: 0.37286404, a: 1}
+  alturaElevacao: 0.5
+  casa: {fileID: 4479006076084087666, guid: 9b1e7248e9955244c9e1c112af605ffa, type: 3}
+  pecaBranca: {fileID: 2911907423808343212, guid: 05af2229ca5f92e439d8b8400047987c, type: 3}
+  pecaPreta: {fileID: 5214308400865052766, guid: 19b9103ccd23ec74f9630e474d176b7b, type: 3}
+  mago: {fileID: 936958624404142047, guid: 5980d14deaa0ac947b58c549e5f462f4, type: 3}

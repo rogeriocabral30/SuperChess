@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 1098337896148461832}
   - component: {fileID: 6934042751199569925}
   - component: {fileID: 2124860946764935243}
-  - component: {fileID: 8142329357475219536}
   - component: {fileID: 6934689214910054404}
+  - component: {fileID: 3573300855911072841}
   m_Layer: 0
   m_Name: Chess Pawn Black
-  m_TagString: Untagged
+  m_TagString: ChessPawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60,6 +60,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -85,20 +88,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8142329357475219536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5214308400865052766}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be6744aa2a9b92041bc96d9c6fedd2e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hoverColor: {r: 0, g: 0, b: 0, a: 0}
-  moveSpeed: 2
 --- !u!64 &6934689214910054404
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -121,3 +110,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: dc780bbe80163bc46883e8c2d96af493, type: 3}
+--- !u!114 &3573300855911072841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5214308400865052766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7486ee6f6b163e84fbf3ccbd7cd7f951, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 0.6826908, g: 0.8867924, b: 0.11294055, a: 0}
+  moveSpeed: 2
+  canAct: 0
+  tabuleiro: {fileID: 886615827862252234, guid: 40465f88f40d6fd47933fbeaa39a8510, type: 3}
+  arqueiroPreto: {fileID: -6960738391609462252, guid: bf1e2dcf9f7e9e7468e93641aa9043fa, type: 3}
+  blackArcher: {fileID: 2765123148830343212, guid: bf1e2dcf9f7e9e7468e93641aa9043fa, type: 3}
+  peao: {fileID: 5214308400865052766}
+  blackMage: {fileID: 7824986730634663279, guid: a2b2d938c294c364d8f7c02613e58dd2, type: 3}
+  turnManager: {fileID: 6624266347020599558, guid: 39a52d707db02a74dbedb5966aaa3f4e, type: 3}
+  battleManager: {fileID: 6084751253778790735, guid: bf5c7c45d7d8a524690f3cfa052c75ca, type: 3}
+  posAtual: {x: 0, y: 0}
+  novaPos: {x: 0, y: 0}

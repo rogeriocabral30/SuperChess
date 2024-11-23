@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 712e2818a790eba44ba23079193957dc
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - attackCirclePrefab: {fileID: 3263921122093078746, guid: 1e2fb287bb77e1541841c7d4cc287a91, type: 3}
+  - circulo: {fileID: 3263921122093078746, guid: 1e2fb287bb77e1541841c7d4cc287a91, type: 3}
+  - attackParticles: {fileID: 6316539527524425579, guid: de1dc415f01014d45ba87cd6792c8c76, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 9f0351d3b76e7154fb5525411af3a33b
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - peaoBranco: {fileID: -7535596328280824895, guid: 05af2229ca5f92e439d8b8400047987c, type: 3}
+  - arqueiroBranco: {fileID: -3511678929620330142, guid: 16682b4c3274e0743b44da34b8916831, type: 3}
+  - tabuleiro: {instanceID: 0}
+  - attackCircleManager: {fileID: -4331175690649331715, guid: 1e2fb287bb77e1541841c7d4cc287a91, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
